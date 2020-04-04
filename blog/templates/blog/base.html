@@ -1,0 +1,49 @@
+{% load static %}
+<html>
+<head>
+  <title> Katharinas Blog </title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<div class="page-header">
+    <h1><a href="/">Katharinas Blog</a></h1>
+</div>
+
+<h1 style = "color:blue"> Das wäre also Katharinas erste Webpage </h1>
+<h2> Ja genau, ganz alleine gemacht! </h2>
+<h3> Hochgeladen am: 03.04.2020 </h3>
+<body>
+<div>
+<p> Ganz schön viel Werkzeug braucht man da aber, nämlich: </p>
+<ul>
+  <li> Einführung in die Console </li>
+  <li> Einführung in Python </li>
+  <li> Einführung in Django </li>
+  <li> Einführung in HTML </li>
+  <li> und Verknüpfungen davon (ok ok <em>alles</em> hab ich nicht verstanden) </li>
+</ul>
+</div>
+  <p style = "color:red"> Wie das geht? Nachzulesen bei: <a href="https://djangogirls.org">link</a></p>
+  <p style = "color:green"> Danke an Alexandra für den Tipp bzgl Django Girls :-) </p>
+  <button> Click me </button>
+<p title = "Erwischt :-)">
+Ich bin ein neuer Paragraph - was verbirgt sich hinter mit?
+</p>
+<p> So, jetzt aber zur <em>eigentlichen</em> Aufgabe: </p>
+<h1 style = "color:red"> Meine Posts </h1>
+
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+          {% block content %}
+          {% endblock %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
