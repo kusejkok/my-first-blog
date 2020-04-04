@@ -23,5 +23,14 @@
 <p title = "Erwischt :-)">
 Ich bin ein neuer Paragraph - was verbirgt sich hinter mit?
 </p>
+<p> So, jetzt aber zur eigentlichen Aufgabe: </p>
+<h1> Meine Posts </h1>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2> <a href=''> {{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 </body>
 </html>
