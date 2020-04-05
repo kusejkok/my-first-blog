@@ -9,6 +9,9 @@
 </head>
 
 <div class="page-header">
+  {% if user.is_authenticated %}
+    <a href="{% url 'post_new' %}" class = "top-menu" ><span class="glyphicon glyphicon-plus"></span></a>
+  {% endif %}
     <h1><a href="/">Katharinas Blog</a></h1>
 </div>
 
@@ -22,19 +25,21 @@
   <li> Einführung in die Console </li>
   <li> Einführung in Python </li>
   <li> Einführung in Django </li>
-  <li> Einführung in HTML </li>
+  <li> Einführung in HTML und CSS: Checkout <a href="https://www.w3schools.com/html/" target="_blank">HTML5 tutorial!</a>
+ </li>
   <li> und Verknüpfungen davon (ok ok <em>alles</em> hab ich nicht verstanden) </li>
 </ul>
 </div>
-  <p style = "color:red"> Wie das geht? Nachzulesen bei: <a href="https://djangogirls.org">link</a></p>
+  <p style = "color:red"> Wie das geht? Nachzulesen bei: <a href="https://djangogirls.org" target="_blank">DjangGirls</a></p>
   <p style = "color:green"> Danke an Alexandra für den Tipp bzgl Django Girls :-) </p>
   <button> Click me </button>
 <p title = "Erwischt :-)">
 Ich bin ein neuer Paragraph - was verbirgt sich hinter mit?
 </p>
-<p> So, jetzt aber zur <em>eigentlichen</em> Aufgabe: </p>
-<h1 style = "color:red"> Meine Posts </h1>
+<p> So, jetzt aber zur <em>eigentlichen</em> Aufgabe... </p>
+<p> Zurück zur Hauptseite: TO DO </p>
 
+<h1 style = "color:red"> Meine Posts </h1>
 
 <div class="content container">
     <div class="row">
