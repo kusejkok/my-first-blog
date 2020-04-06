@@ -43,4 +43,6 @@ def post_edit(request, pk):
 
 def about_page(request):
     return render(request, 'blog/about_page.html', {})
-    
+
+def terminal_description(request):
+    return render(request, 'blog/terminal_description.html', {})
