@@ -9,6 +9,7 @@
     color: #ffffff;
     font-size: 28pt;
     text-decoration: none;
+    font-family: 'Lobster';
 }
 
 .content {
@@ -42,10 +43,11 @@
     color: #000000;
 }
 
-h1 a, h2 a {
+h1, h1 a, h2 a {
     color: #8B08E7;
     font-family: 'Lobster';
 }
+
 
 body {
     padding-left: 15px;

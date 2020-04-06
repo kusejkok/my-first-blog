@@ -8,8 +8,12 @@
   <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 
+<div class="page-header">
+    <a href="{% url 'post_list' %}"class="top-menu" ><span class="glyphicon glyphicon-home"></span></a>
+    <h1><a href="/">Katharinas Django Blog</a></h1>
+</div>
+
 <body>
-    <a class="btn btn-default" href="{% url 'post_list' %}"><span class="glyphicon glyphicon-home"></span></a>
   <h1> Terminal commands good to know </h1>
 <div>
   <ul>
