@@ -17,5 +17,6 @@
         <div>
           <p> <em> Comments: </em> {{ post.text|linebreaksbr }}</p>
         </div>
+        <button> <a  href="{% url 'post_list' %}" >Zurück zur Hauptseite</a> </button>
     </div>
 {% endblock %}
