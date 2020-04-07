@@ -1,0 +1,15 @@
+{% extends 'blog/questions.html' %}
+
+{% block content %}
+  {% for question in questions %}
+  <hr>
+      <div class="question">
+          <div class="date">
+              <p> Published: {{ question.created_date }}</p>
+              <h3> Author:  {{ question.author }} </h3>
+              <h2> Title:  {{ question.title }} </h2>
+              <p> Urgent: {{ question.urgent }} </p>
+              <p> Question:  {{ question.text}} </p>
+      </div>
+   {% endfor %}
+{% endblock %}
