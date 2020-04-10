@@ -66,8 +66,14 @@ def post_remove(request, pk):
     post.delete()
     return redirect('post_list')
 
-def about_page(request):
-    return render(request, 'blog/about_page.html', {})
+def python_learning(request):
+    return render(request, 'blog/python_learning.html', {})
 
-def terminal_description(request):
-    return render(request, 'blog/terminal_description.html', {})
+def html_learning(request):
+    return render(request, 'blog/html_learning.html', {})
+
+def terminal_learning(request):
+    return render(request, 'blog/terminal_learning.html', {})
+
+def other_learning(request):
+    return render(request, 'blog/other_learning.html', {})

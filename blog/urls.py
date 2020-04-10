@@ -10,7 +10,9 @@ urlpatterns = [
     path('achievedTasks/post/<int:pk>/remove/', views.post_remove, name='post_remove'),
     path('achievedTasks/post/<int:pk>/publish/', views.post_publish, name='post_publish'),
     path('achievedTasks/drafts/', views.post_draft_list, name='post_draft_list'),
-    path('about/', views.about_page, name='about_page'),
-    path('terminal/', views.terminal_description, name='terminal_description'),
+    path('python/', views.python_learning, name='python_learning'),
+    path('html/', views.html_learning, name='html_learning'),
+    path('terminal/', views.terminal_learning, name='terminal_learning'),
+    path('other/', views.other_learning, name='other_learning'),
     path('questions/', views.question_list, name = 'question_list'),
 ]

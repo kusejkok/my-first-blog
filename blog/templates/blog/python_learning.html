@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+<head>
+  <title> Katharinas Blog </title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<div class="page-header">
+    <a href="{% url 'home' %}"class="top-menu" ><span class="glyphicon glyphicon-home"></span></a>
+    <h1><a href="/">Katharinas Django Blog</a></h1>
+</div>
+
+<body>
+  <h1> Working through the book "Automate the boring stuff with Python" </h1>
+<div>
+  <h3> Chapter 1: Python Basics </h3>
+  <h4> General </h4>
+  <ul>
+    <li> Variable names in Python can contain letters, numbers and _, but must start with a letter </li>
+    <li> Variables are assigned with = </li>
+    <li> Python uses the common operators: +, -, *, /. // gives back the integer part of the division, % the remainder. ** powers. </li>
+  </ul>
+  <h4> Functions learned </h4>
+  <ul>
+    <li> str(), int(), float() will evaluate the input as string, integer and float. </li>
+    <li> print() displays the argument. </li>
+    <li> len() gives the length of a string. </li>
+    <li> input() asks the user for input. </li>
+  </ul>
+</div>
+
+
+
+<div>
+  <h3> Chapter 2: Flow control </h3>
+  <h4> General </h4>
+  <ul>
+    <li> Boolean values in Python are "True" and "False". </li>
+    <li> The three Boolean operators are "and", "or" and "not". </li>
+    <li> The six comparison operators are: ==, !=, <, <=, >, >= </li>
+    <li> A Python program can be exited with ctr C; or sys.exit() in the code. </li>
+    <li> The function range() can take 1, 2 or 3 arguments. (from, to by) </li>
+    <li> Importing packages in Python needs "import ..." at the beginning, e.g., import random </li>
+    <li> Function from an imprted module are called with module.function(), e.g., random.randint(5) </li>
+  </ul>
+  <h4> Flow control statements </h4>
+  <ul>
+    <li> if condition: do..., elif, else  </li>
+    <li> while condition: do..., you can break with "break" or continue with "continue" </li>
+    <li> for i in range(5): condition... </li>
+    <li> input() asks the user for input. </li>
+  </ul>
+</div>
+
+
+<body>
+
+</body>
+</html>
