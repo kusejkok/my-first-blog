@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post, Question
-from .forms import PostForm
+from .models import Post, Question, PythonExample
+from .forms import PostForm, PythonExampleForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -68,6 +68,22 @@ def post_remove(request, pk):
 
 def python_learning(request):
     return render(request, 'blog/python_learning.html', {})
+
+def python_blog(request):
+    pythonexamples = PythonExample.objects.all()
+    return render(request, 'blog/python_blog.html', {'pythonexamples': pythonexamples})
+
+def python_blog_new(request):
+    if request.method == "POST":
+        form = PythonExampleForm(request.POST)
+        if form.is_valid():
+            pythonexample = form.save()
+            pythonexample.save()
+            return redirect('python_blog')
+    else:
+        form = PythonExampleForm()
+    return render(request, 'blog/python_blog_new.html', {'form': form})
+
 
 def html_learning(request):
     return render(request, 'blog/html_learning.html', {})

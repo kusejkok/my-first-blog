@@ -29,3 +29,50 @@ print(fortune)
 
 #spam = print("Hallo")
 print('cats', 'mice')
+
+def spam():
+    eggs = 99
+    bacon()
+    print(eggs)
+
+def bacon():
+    ham = 101
+    eggs = 0
+
+spam()
+
+def spam():
+    print(eggs)
+
+eggs = 123
+spam()
+print(eggs)
+
+def spam():
+    global eggs
+    eggs = 'spam'
+
+def bacon():
+    eggs = 'bacon'
+
+def ham():
+    print(eggs)
+
+eggs = 42
+spam() # sets eggs to 'spam'
+print(eggs) # spam
+
+#def spam():#
+#    print(eggs)
+#    eggs = 'spam local'
+#spam()
+
+def spam(divideBy):
+    try:
+        return 42 / divideBy
+    except ZeroDivisionError:
+        print("Error: Invalid argument")
+
+print(spam(2))
+print(spam(0))
+print(spam(4))

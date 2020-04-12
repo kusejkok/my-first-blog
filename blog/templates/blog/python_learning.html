@@ -14,7 +14,16 @@
 </div>
 
 <body>
-  <h1> Working through the book "Automate the boring stuff with Python" </h1>
+  <p> Working through the book "Automate the boring stuff with Python" </p>
+
+  <h2> <a href = "{% url 'python_blog' %}"> Python Examples </a> </h2>
+
+<hr>
+
+  <h1> Summary </h1>
+
+<hr>
+
 <div>
   <h3> Chapter 1: Python Basics </h3>
   <h4> General </h4>
@@ -32,7 +41,7 @@
   </ul>
 </div>
 
-
+<hr>
 
 <div>
   <h3> Chapter 2: Flow control </h3>
@@ -55,6 +64,62 @@
   </ul>
 </div>
 
+<hr>
+
+<div>
+  <h3> Chapter 3: Functions </h3>
+  <h4> General </h4>
+  <ul>
+    <li> A function is defined with def functionName():  </li>
+    <li> Return values are given with the <em> return </em> command. </li>
+    <li> The None value: E.g. print() has no return value, it returns None. </li>
+    <li> Python distinguishes between local and global values: local values within functions are deleted after the function call. </li>
+    <li> Within functions, Python does not fall back to globally defined variables, e.g. <br>
+        <em> eggs = "hi" <br>
+             def spam(): <br>
+             print(eggs) <br>
+             eggs = "hallo" <br>
+             spam() <br>
+        would give an error message: UnboundLocalError </em> </li>
+      <li> The try: except clause can avoid function being stopped because of errors. </li>
+  </ul>
+  <h4> Errors: </h4>
+  <ul>
+    <li> ZeroDivisionError  </li>
+    <li> NameError (e.g. you refer to a variable name that does not exist) </li>
+    <li> TypeError (e.g. using a list method on a string) </li>
+    <li>  </li>
+  </ul>
+</div>
+
+<hr>
+
+<div>
+  <h3> Chapter 4: Lists </h3>
+  <h4> General </h4>
+  <ul>
+    <li> Lists are created with brackets: [...]  </li>
+    <li> Lists indexing starts at 0. list[0:i] does not include the elemt indexed with i. </li>
+    <li> list[:i] gives the list elements 0 to i-1, list[i:] gives list elements i until the last one. </li>
+    <li> Lists of lists are indexed with list[i][j]. </li>
+    <li> Negative indexing starts at -1, i.e., list[-1] gives the last element. </li>
+    <li> Lists can be concatenated with + and replicated with * </li>
+    <li> del list[i] removes the list element with index i. </li>
+    <li> in and not in can be used to check whether elements are part of a list. </li>
+    <li> Lists can be used to simultaneously assign values to many variables, like a,b,c = ["hi", "hallo", "goodby"] </li>
+    <li> +=, *=, -=, /=, %= are shortcuts for list = list + ..,... </li>
+    <li> Methods are functions specific for a data type, and called with list.method() </li>
+    <li> Methods for lists are: index(element), append(elemet), insert(index, element), remove(element) </li>
+    <li> Careful with remove and index: only gives back information on the first appearance </li>
+    <li> The sort() method uses ASCIIbetical order, i.e., uppercase A-Z, then lower case a-z; sort(key = str.lower) helps for alphabetical sorting </li>
+    <li> Applying methods on lists change the immediately, myList = myList.append("hallo") gives back None. </li>
+    <li> Tuples and strings are list-like but immutable </li>
+    <li> To create a tuple with one elements, one needs a trailing comma, i.e., myTuple = ("Hallo",) </li>
+    <li> str(), tuple() and list() can be used to change the type </li>
+    <li> Variables store reference to lists, not the list itself! </li>
+    <li> copy() and deepcopy() can be used to make a copy of a list (or a list of lists), not only reference the list. </li>
+  </ul>
+</div>
 
 <body>
 

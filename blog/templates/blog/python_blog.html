@@ -1,0 +1,37 @@
+{% load static %}
+<html>
+<head>
+  <title> Katharinas Blog </title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<div class="page-header">
+    <a href="{% url 'home' %}"class="top-menu" ><span class="glyphicon glyphicon-home"></span></a>
+    <a href="{% url 'python_blog_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    <h1><a href="/">Katharinas Django Blog</a></h1>
+</div>
+
+<body>
+
+<h1><a class="btn btn-default" href="{% url 'python_learning' %}"><span class="glyphicon glyphicon-arrow-left"></span></a>  Examples  </h1>
+
+  <div class="content container">
+      <div class="row">
+        {% for pythonexample in pythonexamples %}
+        <hr>
+            <div class="pythonexample">
+                <div class="date">
+                    <p> Published: {{ pythonexample.created_date }}</p>
+                    <h3> Author:  {{ pythonexample.author }} </h3>
+                    <h4> Title:  {{ pythonexample.title }} </h4>
+                    <p> Example:  {{ pythonexample.text}} </p>
+            </div>
+         {% endfor %}
+      </div>
+  </div>
+
+</body>
+</html>
