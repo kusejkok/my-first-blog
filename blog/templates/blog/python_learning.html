@@ -24,16 +24,35 @@
 
 <hr>
 
-<div>
-  <h3> Chapter 1: Python Basics </h3>
-  <h4> General </h4>
+<script>
+function show(id) {
+    if(document.getElementById) {
+        var mydiv = document.getElementById(id);
+        mydiv.style.display = (mydiv.style.display=='block'?'none':'block');
+    }
+}
+</script>
+
+<h3> <a href="" onclick="javascript:show('divChapter1'); return false"> Chapter 1: Python Basics </a> </h3>
+<div style="display: none" id="divChapter1">
   <ul>
     <li> Variable names in Python can contain letters, numbers and _, but must start with a letter </li>
     <li> Variables are assigned with = </li>
     <li> Python uses the common operators: +, -, *, /. // gives back the integer part of the division, % the remainder. ** powers. </li>
+    <li> str(), int(), float() will evaluate the input as string, integer and float. </li>
+    <li> print() displays the argument. </li>
+    <li> len() gives the length of a string. </li>
+    <li> input() asks the user for input. </li>
   </ul>
-  <h4> Functions learned </h4>
+</div>
+
+
+<div style = "border:2px solid #c095f5; padding: 10px;">
+  <h3> Chapter 1: Python Basics </h3>
   <ul>
+    <li> Variable names in Python can contain letters, numbers and _, but must start with a letter </li>
+    <li> Variables are assigned with = </li>
+    <li> Python uses the common operators: +, -, *, /. // gives back the integer part of the division, % the remainder. ** powers. </li>
     <li> str(), int(), float() will evaluate the input as string, integer and float. </li>
     <li> print() displays the argument. </li>
     <li> len() gives the length of a string. </li>
@@ -43,9 +62,8 @@
 
 <hr>
 
-<div>
+<div style = "border:2px solid #c095f5; padding: 10px;">
   <h3> Chapter 2: Flow control </h3>
-  <h4> General </h4>
   <ul>
     <li> Boolean values in Python are "True" and "False". </li>
     <li> The three Boolean operators are "and", "or" and "not". </li>
@@ -54,9 +72,6 @@
     <li> The function range() can take 1, 2 or 3 arguments. (from, to by) </li>
     <li> Importing packages in Python needs "import ..." at the beginning, e.g., import random </li>
     <li> Function from an imprted module are called with module.function(), e.g., random.randint(5) </li>
-  </ul>
-  <h4> Flow control statements </h4>
-  <ul>
     <li> if condition: do..., elif, else  </li>
     <li> while condition: do..., you can break with "break" or continue with "continue" </li>
     <li> for i in range(5): condition... </li>
@@ -66,9 +81,8 @@
 
 <hr>
 
-<div>
+<div style = "border:2px solid #c095f5; padding: 10px;">
   <h3> Chapter 3: Functions </h3>
-  <h4> General </h4>
   <ul>
     <li> A function is defined with def functionName():  </li>
     <li> Return values are given with the <em> return </em> command. </li>
@@ -83,20 +97,12 @@
         would give an error message: UnboundLocalError </em> </li>
       <li> The try: except clause can avoid function being stopped because of errors. </li>
   </ul>
-  <h4> Errors: </h4>
-  <ul>
-    <li> ZeroDivisionError  </li>
-    <li> NameError (e.g. you refer to a variable name that does not exist) </li>
-    <li> TypeError (e.g. using a list method on a string) </li>
-    <li>  </li>
-  </ul>
 </div>
 
 <hr>
 
-<div>
+<div style = "border:2px solid #c095f5; padding: 10px;">
   <h3> Chapter 4: Lists </h3>
-  <h4> General </h4>
   <ul>
     <li> Lists are created with brackets: [...]  </li>
     <li> Lists indexing starts at 0. list[0:i] does not include the elemt indexed with i. </li>
@@ -120,6 +126,65 @@
     <li> copy() and deepcopy() can be used to make a copy of a list (or a list of lists), not only reference the list. </li>
   </ul>
 </div>
+
+<hr>
+
+<div style = "border:2px solid #c095f5; padding: 10px;">
+  <h3> Chapter 5: Dictionaries and structuring data </h3>
+  <ul>
+    <li> While lists are ordered, dictionaries are unordered. </li>
+    <li> dict = {key1: value1, key2: value2,..., keyN, valueN} </li>
+    <li> Values in dictionaries can be accessed by dict[key1]. </li>
+    <li> The methods keys(), values() and items() access the keys, values and items (tuples of keys and values) </li>
+    <li> <em> 'eggs' in picnicItems </em> is the same as <em> 'eggs' in picnicItems.keys() </em> </li>
+    <li> The method get() either gets the values of the given key or returns a default value: picnicItems.get('eggs', 0) </li>
+    <li> The setdefault() method can set a default value, but not changing the value in case the key exists. </li>
+    <li> Dictionaries can contain dictionaries as values </li>
+  </ul>
+</div>
+
+<hr>
+
+<div style = "border:2px solid #c095f5; padding: 10px;">
+  <h3> Chapter 6: Manipulating strings </h3>
+  <ul>
+    <li> Escape characters in strings are: \', \", \t, \n, \\. </li>
+    <li> print(r"blabla\nblabla") will print escape characters. </li>
+    <li> Multiline strings """ consider the formatting (tabs, new lines) when printing. </li>
+    <li> The <em> in </em> and <em> not in </em> operators work for strings too! ("Hallo" in "Hallo du") </li>
+    <li> The string methods .upper(), .lower() convert to upper/lower-case string only. </li>
+    <li> The isX methods (.isupper(), .islower(), isalpha(), isalnum(), isdecomal()) return a Boolean value. </li>
+    <li> The methods .startswith() and .endswith() check for string beginnings and endings. </li>
+    <li> Splitting strings: "My name is Kathi.".split("a") gives ["My n", "me is K", "thi."] </li>
+    <li> Joining strings: "a".join(["My n", "me is K", "thi."]) gives "My name is Kathi." </li>
+    <li> .rjust(n, "*"), ljust(n, "*") and center(n, "*") insert "*" to the left, right or both sides, to make the string n characters long. </li>
+  </ul>
+</div>
+
+<hr>
+
+<div style = "border:2px solid #c095f5; padding: 10px;">
+<h3> Errors: </h3>
+<ul>
+  <li> ZeroDivisionError  </li>
+  <li> NameError (e.g. you refer to a variable name that does not exist) </li>
+  <li> TypeError (e.g. using a list method on a string) </li>
+  <li> UnboundLocalError (e.g. defining a local variable only after it is called in a function) </li>
+  <li> ValueError (e.g. using the method index calling an index that does not exist in a list) </li>
+  <li> AttributeError (e.g. using the method append on a string, not list) </li>
+  <li> KeyError (e.g. Asking for a key in a dictionary that is not defined) </li>
+</ul>
+</div>
+
+<hr>
+
+<div style = "border:2px solid #c095f5; padding: 10px;">
+  <h3> General notes (working on OS) </h3>
+  <ul>
+    <li> Importing modules: <em> sudo pip3 install ModuleName </em> </li>
+    <li> Running on terminal: Either <em> python3 myProgram.py </em> or first line #! python3 in the script. </li>
+  </ul>
+
 
 <body>
 

@@ -27,7 +27,7 @@
                     <p> Published: {{ pythonexample.created_date }}</p>
                     <h3> Author:  {{ pythonexample.author }} </h3>
                     <h4> Title:  {{ pythonexample.title }} </h4>
-                    <p> Example:  {{ pythonexample.text}} </p>
+                    <p> Example:  {{ pythonexample.text|linebreaksbr}} </p>
             </div>
          {% endfor %}
       </div>
