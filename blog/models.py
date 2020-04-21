@@ -17,7 +17,7 @@ class Post(models.Model):
     ]
     subtitle = models.CharField(max_length = 10, choices = IT_NEW, default = 'DJANGO')
     DIFF = [
-        ('Easy', 'Eays'),
+        ('Easy', 'Easy'),
         ('Doable', 'Doable'),
         ('Difficult', 'Difficult'),
         ('Very difficult', 'Very difficult'),
@@ -35,7 +35,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-
+class PollsQuestion(models.Model):
+    polls_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
 
 class Question(models.Model):
     author = models.CharField(max_length = 200)
@@ -50,6 +52,7 @@ class Question(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class PythonExample(models.Model):
     author = models.CharField(max_length = 200)

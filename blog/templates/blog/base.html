@@ -1,7 +1,7 @@
 {% load static %}
 <html>
 <head>
-  <title> Katharinas Django Blog </title>
+  <title> Katharinas Django Page </title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="{% static 'css/blog.css' %}">
@@ -22,10 +22,16 @@
 <body>
 
 <h1> Das wäre also Katharinas erste Django-Webpage </h1>
-<h3> Erstellt mit Hilfe des Django-Girls Tutorials: <a href="https://djangogirls.org" target="_blank">DjangoGirls</a> </h3>
+<h3> Erstellt mit Hilfe folgender Tutorials: </h3>
+  <ul>
+    <li> <a href="https://djangogirls.org" target="_blank">DjangoGirls Tutorial</a> </li>
+    <li> <a href="https://docs.djangoproject.com/en/3.0/intro/tutorial01/" target="_blank">Official Django Tutorial </a> </li>
+    <li> <a href="https://tutorial-extensions.djangogirls.org/en/" target="_blank"> DjangoGirls Tutorial Extensions </a> </li>
+  </ul>
+
 <p> Gestartet am: 03.04.2020 </p>
 
-<h4> Hilfsmittel: </h4>
+<h3> Weitere Hilfsmittel: </h3>
 <ul>
 <li> Einführung in <a href="{% url 'html_learning' %}"> HTML und CSS </a> </li>
 <li> Einführung in <a href= "{% url 'python_learning' %}" target="_self"> Python </a></li>
@@ -38,11 +44,14 @@
 {% else %}
   <p align = "right"> <span class="glyphicon glyphicon-user"></span> Not logged in </p>
 {% endif %}
-<hr>
-<h1><a href="{% url 'post_list' %}"> Achieved Django Tasks </a></h1>
-<hr>
-<h1><a href="{% url 'question_list' %}"> Questions </a></h1>
 
+<hr>
+<h2><a href="{% url 'polls_list' %}"> Polls page </a></h2>
+<hr>
+<h2><a href="{% url 'post_list' %}"> Blog page </a></h2>
+<hr>
+<h2><a href="{% url 'question_list' %}"> Questions </a></h2>
+<hr>
 
 {% block content1 %}
 {% endblock %}

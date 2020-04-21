@@ -66,6 +66,11 @@ def post_remove(request, pk):
     post.delete()
     return redirect('post_list')
 
+
+def polls_list(request):
+    return render(request, 'blog/polls_list.html', {})
+
+
 def python_learning(request):
     return render(request, 'blog/python_learning.html', {})
 

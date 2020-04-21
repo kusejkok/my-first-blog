@@ -20,10 +20,6 @@
 
 <hr>
 
-  <h1> Summary </h1>
-
-<hr>
-
 <script>
 function show(id) {
     if(document.getElementById) {
@@ -46,24 +42,10 @@ function show(id) {
   </ul>
 </div>
 
-
-<div style = "border:2px solid #c095f5; padding: 10px;">
-  <h3> Chapter 1: Python Basics </h3>
-  <ul>
-    <li> Variable names in Python can contain letters, numbers and _, but must start with a letter </li>
-    <li> Variables are assigned with = </li>
-    <li> Python uses the common operators: +, -, *, /. // gives back the integer part of the division, % the remainder. ** powers. </li>
-    <li> str(), int(), float() will evaluate the input as string, integer and float. </li>
-    <li> print() displays the argument. </li>
-    <li> len() gives the length of a string. </li>
-    <li> input() asks the user for input. </li>
-  </ul>
-</div>
-
 <hr>
 
-<div style = "border:2px solid #c095f5; padding: 10px;">
-  <h3> Chapter 2: Flow control </h3>
+<h3> <a href="" onclick="javascript:show('divChapter2'); return false"> Chapter 2: Flow control </a> </h3>
+  <div style="display: none" id="divChapter2">
   <ul>
     <li> Boolean values in Python are "True" and "False". </li>
     <li> The three Boolean operators are "and", "or" and "not". </li>
@@ -81,8 +63,9 @@ function show(id) {
 
 <hr>
 
-<div style = "border:2px solid #c095f5; padding: 10px;">
-  <h3> Chapter 3: Functions </h3>
+
+<h3> <a href="" onclick="javascript:show('divChapter3'); return false"> Chapter 3: Functions </a> </h3>
+    <div style="display: none" id="divChapter3">
   <ul>
     <li> A function is defined with def functionName():  </li>
     <li> Return values are given with the <em> return </em> command. </li>
@@ -101,8 +84,9 @@ function show(id) {
 
 <hr>
 
-<div style = "border:2px solid #c095f5; padding: 10px;">
-  <h3> Chapter 4: Lists </h3>
+
+<h3> <a href="" onclick="javascript:show('divChapter4'); return false"> Chapter 4: Lists </a> </h3>
+      <div style="display: none" id="divChapter4">
   <ul>
     <li> Lists are created with brackets: [...]  </li>
     <li> Lists indexing starts at 0. list[0:i] does not include the elemt indexed with i. </li>
@@ -129,8 +113,8 @@ function show(id) {
 
 <hr>
 
-<div style = "border:2px solid #c095f5; padding: 10px;">
-  <h3> Chapter 5: Dictionaries and structuring data </h3>
+<h3> <a href="" onclick="javascript:show('divChapter5'); return false"> Chapter 5: Dictionaries and structuring data </a> </h3>
+        <div style="display: none" id="divChapter5">
   <ul>
     <li> While lists are ordered, dictionaries are unordered. </li>
     <li> dict = {key1: value1, key2: value2,..., keyN, valueN} </li>
@@ -145,8 +129,8 @@ function show(id) {
 
 <hr>
 
-<div style = "border:2px solid #c095f5; padding: 10px;">
-  <h3> Chapter 6: Manipulating strings </h3>
+<h3> <a href="" onclick="javascript:show('divChapter6'); return false"> Chapter 6: Manipulating strings </a> </h3>
+          <div style="display: none" id="divChapter6">
   <ul>
     <li> Escape characters in strings are: \', \", \t, \n, \\. </li>
     <li> print(r"blabla\nblabla") will print escape characters. </li>
@@ -163,8 +147,9 @@ function show(id) {
 
 <hr>
 
-<div style = "border:2px solid #c095f5; padding: 10px;">
-<h3> Errors: </h3>
+
+<h3> <a href="" onclick="javascript:show('divErrors'); return false"> Errors: </a> </h3>
+          <div style="display: none" id="divErrors">
 <ul>
   <li> ZeroDivisionError  </li>
   <li> NameError (e.g. you refer to a variable name that does not exist) </li>
@@ -178,8 +163,10 @@ function show(id) {
 
 <hr>
 
-<div style = "border:2px solid #c095f5; padding: 10px;">
-  <h3> General notes (working on OS) </h3>
+
+<h3> <a href="" onclick="javascript:show('divNotes'); return false"> General notes (working on OS) </a> </h3>
+            <div style="display: none" id="divNotes">
+
   <ul>
     <li> Importing modules: <em> sudo pip3 install ModuleName </em> </li>
     <li> Running on terminal: Either <em> python3 myProgram.py </em> or first line #! python3 in the script. </li>

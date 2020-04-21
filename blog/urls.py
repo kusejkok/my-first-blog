@@ -10,6 +10,7 @@ urlpatterns = [
     path('achievedTasks/post/<int:pk>/remove/', views.post_remove, name='post_remove'),
     path('achievedTasks/post/<int:pk>/publish/', views.post_publish, name='post_publish'),
     path('achievedTasks/drafts/', views.post_draft_list, name='post_draft_list'),
+    path('polls_list/', views.polls_list, name='polls_list'),
     path('python/', views.python_learning, name='python_learning'),
     path('python/python_blog', views.python_blog, name='python_blog'),
     path('python/python_blog/new/', views.python_blog_new, name='python_blog_new'),
