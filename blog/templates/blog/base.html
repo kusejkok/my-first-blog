@@ -10,26 +10,19 @@
 
 <div class="page-header">
     <a href="{% url 'home' %}"class="top-menu" ><span class="glyphicon glyphicon-home"></span></a>
-    {% if user.is_authenticated %}
-      <a href="{% url 'post_new' %}" class = "top-menu" ><span class="glyphicon glyphicon-plus"></span></a>
-      <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-    {% else %}
-      <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
-    {% endif %}
-    <h1><a href="/">Katharinas Django Blog</a></h1>
+    <h1><a href="/">Katharinas Django Page</a></h1>
 </div>
+
 
 <body>
 
-<h1> Das wäre also Katharinas erste Django-Webpage </h1>
+<h1> Das wäre also Katharinas erste Django-Webpage! </h1>
 <h3> Erstellt mit Hilfe folgender Tutorials: </h3>
   <ul>
     <li> <a href="https://djangogirls.org" target="_blank">DjangoGirls Tutorial</a> </li>
     <li> <a href="https://docs.djangoproject.com/en/3.0/intro/tutorial01/" target="_blank">Official Django Tutorial </a> </li>
     <li> <a href="https://tutorial-extensions.djangogirls.org/en/" target="_blank"> DjangoGirls Tutorial Extensions </a> </li>
   </ul>
-
-<p> Gestartet am: 03.04.2020 </p>
 
 <h3> Weitere Hilfsmittel: </h3>
 <ul>
@@ -39,22 +32,13 @@
 <li> ... und einige <a href = "{% url 'other_learning' %}" target="_self"> andere </a> Hilfsmittel </li>
 </ul>
 
-{% if user.is_authenticated %}
-  <p align = "right"> <span class="glyphicon glyphicon-user"></span> Eingeloggt als: {{ user.username }} <small> <a href="{% url 'logout' %}">Log out </a> </small></p>
-{% else %}
-  <p align = "right"> <span class="glyphicon glyphicon-user"></span> Not logged in </p>
-{% endif %}
-
 <hr>
-<h2><a href="{% url 'polls_list' %}"> Polls page </a></h2>
-<hr>
-<h2><a href="{% url 'post_list' %}"> Blog page </a></h2>
-<hr>
-<h2><a href="{% url 'question_list' %}"> Questions </a></h2>
+<span class="badge"><h5><a href="{% url 'polls_list' %}"> Polls page </a></h5></span>
+<span class="badge"><h5><a href="{% url 'post_list' %}"> Blog page </a></h5></span>
+<span class="badge"><h5><a href= "{% url 'python_blog' %}" target="_self">  Python </a></h5></span>
 <hr>
 
-{% block content1 %}
-{% endblock %}
+
 
 </body>
 </html>

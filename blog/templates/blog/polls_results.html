@@ -10,18 +10,23 @@
 
 <div class="page-header">
     <a href="{% url 'home' %}"class="top-menu" ><span class="glyphicon glyphicon-home"></span></a>
-    <a href="{% url 'post_new' %}" class = "top-menu" ><span class="glyphicon glyphicon-plus"></span></a>
     <h1><a href="/">Katharinas Django Page</a></h1>
 </div>
 
-<h1> Achieved Tasks </h1>
+<body>
 
-<div class="content container">
-    <div class="row">
-        <div class="col-md-8">
-          {% block content %}
-          {% endblock %}
-        </div>
-    </div>
-</div>
+<h3>  <a class="btn btn-default" href="{% url 'polls_list' %}"><span class="glyphicon glyphicon-arrow-left"></span> Back to all questions </a> </h3>
+
+<h1>{{ pollsquestion.polls_text }}</h1>
+
+<ol>
+{% for choice in pollsquestion.pollschoices_set.all %}
+    <li> <h4 style = "text-indent : 1em;"> {{ choice.choice_text }}: {{ choice.votes }} vote{{ choice.votes|pluralize }}</li> </h4>
+{% endfor %}
+</ol>
+
+<h3> <a class="btn btn-default" href="/polls_list/{{ pollsquestion.pk }}/"><span class="glyphicon glyphicon-arrow-left"></span> Vote again? </a> </h3>
+
+
+</body>
 </html>

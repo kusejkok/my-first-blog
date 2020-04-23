@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post, Question, PythonExample
+from .models import Post, Question, PythonExample, PollsQuestion, PollsChoices
 from .forms import PostForm, PythonExampleForm
 from django.contrib.auth.decorators import login_required
-
+from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 def home(request):
@@ -21,13 +21,12 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
-@login_required
+#@login_required
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit = False)
-            post.author = request.user
             post.published_date = timezone.now()
             post.save()
             return redirect('post_detail', pk = post.pk)
@@ -35,41 +34,69 @@ def post_new(request):
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 
-@login_required
+#@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
-@login_required
+#@login_required
 def post_draft_list(request):
     posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
     return render(request, 'blog/post_draft_list.html', {'posts': posts})
 
-@login_required
+#@login_required
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
     return redirect('post_detail', pk=pk)
 
-@login_required
+#@login_required
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post_list')
 
 
-def polls_list(request):
-    return render(request, 'blog/polls_list.html', {})
 
+
+
+def polls_list(request):
+    pollsquestions = PollsQuestion.objects.all()
+    return render(request, 'blog/polls_list.html', {'pollsquestions': pollsquestions})
+
+def polls_detail(request, question_id):
+    pollsquestion = get_object_or_404(PollsQuestion, pk = question_id)
+    return render(request, 'blog/polls_detail.html', {'pollsquestion': pollsquestion})
+
+def polls_vote(request, question_id):
+    pollsquestion = get_object_or_404(PollsQuestion, pk=question_id)
+    try:
+        selected_choice = pollsquestion.pollschoices_set.get(pk=request.POST['choice'])
+    except (KeyError, PollsChoices.DoesNotExist):
+        # Redisplay the question voting form.
+        return render(request, 'blog/polls_detail.html', {
+            'pollsquestion': pollsquestion,
+            'error_message': "You didn't select a choice.",
+        })
+    else:
+        selected_choice.votes += 1
+        selected_choice.save()
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+        return render(request, 'blog/polls_results.html', {'pollsquestion': pollsquestion})
+
+def polls_results(request, question_id):
+    pollsquestion = get_object_or_404(PollsQuestion, pk=question_id)
+    return render(request, 'blog/polls_results.html', {'pollsquestion': pollsquestion})
 
 def python_learning(request):
     return render(request, 'blog/python_learning.html', {})

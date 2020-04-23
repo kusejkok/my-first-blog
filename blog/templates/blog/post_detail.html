@@ -10,11 +10,9 @@
               <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
         {% endif %}
         <a class="btn btn-default" href="{% url 'post_list' %}"><span class="glyphicon glyphicon-arrow-left"></span></a>
-        {% if user.is_authenticated %}
           <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
           <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-        {% endif %}
-
+        <p> Author: {{ post.author}}
         <h2> Issue: {{ post.title }} </h2>
         <h3> Subject: {{ post.subtitle }} </h3>
         <p> <em> Difficuly: </em>  {{ post.difficulty }} </p>

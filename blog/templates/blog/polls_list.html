@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+<head>
+  <title> Katharinas Django Page </title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<div class="page-header">
+    <a href="{% url 'home' %}"class="top-menu" ><span class="glyphicon glyphicon-home"></span></a>
+    <h1><a href="/">Katharinas Django Page </a></h1>
+</div>
+
+<body>
+
+<h1> Questions to vote on  </h1>
+<div class="post">
+<ol>
+{% for pollsquestion in pollsquestions %}
+<h4><li> <a href="/polls_list/{{ pollsquestion.pk }}"> {{ pollsquestion.polls_text }}</a> </li></h4>
+{% endfor %}
+</ol>
+</div>
+</body>
+</html>
