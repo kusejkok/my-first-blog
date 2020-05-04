@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Post, PythonExample
+from .models import Post, PythonExample, VisitorsInfo
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -12,3 +12,8 @@ class PythonExampleForm(forms.ModelForm):
     class Meta:
         model = PythonExample
         fields = ('author', 'title', 'text')
+
+class VisitorsInfoForm(forms.ModelForm):
+    class Meta:
+        model = VisitorsInfo
+        fields = ('name', 'knowDjango', 'skillsDjango')

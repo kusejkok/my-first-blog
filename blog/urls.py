@@ -21,4 +21,6 @@ urlpatterns = [
     path('terminal/', views.terminal_learning, name='terminal_learning'),
     path('other/', views.other_learning, name='other_learning'),
     path('questions/', views.question_list, name = 'question_list'),
+    path('visitors/', views.visitors_list, name = 'visitors_list'),
+    path('visitors/new/', views.visitors_new, name = 'visitors_new'),
 ]

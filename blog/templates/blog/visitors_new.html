@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+<head>
+  <title> Katharinas Django Page </title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<div class="page-header">
+    <a href="{% url 'home' %}"class="top-menu" ><span class="glyphicon glyphicon-home"></span></a>
+    <h1><a href="/">Katharinas Django Page </a></h1>
+</div>
+
+<body>
+
+<h2> New visitor </h2>
+<form method="POST" class = "post-form">{% csrf_token %}
+  <label for="name"> Your name: </label>
+  <input id="name" type="text" name="name" maxlength="20" required>
+  <label for="knowDjango"> Have you ever heard about Django? </label>
+  <input id="knowDjango" type="checkbox" name="knowDjango" maxlength="100">
+  <label for="skillsDjango"> How good are your Django skills? </label>
+  <input id="skillsDjango" type="range" name="skillsDjango" min = "0" max = "10">
+  <button type = "submit" class = "save btn btn-default"> <span class="glyphicon glyphicon-floppy-disk"> </span> </button>
+</form>
+</body>
+</html>

@@ -49,7 +49,6 @@ class PollsChoices(models.Model):
         return self.choice_text
 
 
-
 class Question(models.Model):
     author = models.CharField(max_length = 200)
     title = models.CharField(max_length = 200)
@@ -77,3 +76,16 @@ class PythonExample(models.Model):
 
     def __str__(self):
         return self.title
+
+class VisitorsInfo(models.Model):
+    name = models.CharField(max_length = 50)
+    knowDjango = models.BooleanField(default = "False")
+    skillsDjango = models.IntegerField(default = 0)
+    published_date = models.DateTimeField(blank = True, null = True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.name

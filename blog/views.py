@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post, Question, PythonExample, PollsQuestion, PollsChoices
-from .forms import PostForm, PythonExampleForm
+from .models import Post, Question, PythonExample, PollsQuestion, PollsChoices, VisitorsInfo
+from .forms import PostForm, PythonExampleForm, VisitorsInfoForm
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 
@@ -125,3 +125,16 @@ def terminal_learning(request):
 
 def other_learning(request):
     return render(request, 'blog/other_learning.html', {})
+
+def visitors_list(request):
+    visitorsinfos = VisitorsInfo.objects.all()
+    return render(request, 'blog/visitors_list.html', {'visitorsinfos': visitorsinfos})
+
+def visitors_new(request):
+    if request.method == "POST":
+        form = VisitorsInfoForm(request.POST)
+        form.save(commit = True)
+        return redirect('visitors_list')
+    else:
+        form = VisitorsInfoForm()
+    return render(request, 'blog/visitors_new.html', {'form': form})

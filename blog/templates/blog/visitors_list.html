@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+<head>
+  <title> Katharinas Django Page </title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<div class="page-header">
+    <a href="{% url 'home' %}"class="top-menu" ><span class="glyphicon glyphicon-home"></span></a>
+    <h1><a href="/">Katharinas Django Page </a></h1>
+</div>
+
+<body>
+
+<h3><a href="{% url 'visitors_new' %}"> New visitor </a></h3>
+<hr>
+
+{% for i in visitorsinfos %}
+  <div>
+      <h2> <a href = " "> {{ i.name }} </a> </h2>
+      <p> Do you know Django? {{ i.knowDjango }} </p>
+      <p> How good are your Django skills? {{ i.skillsDjango }} </p>
+  </div>
+  <hr>
+{% endfor %}
+
+
+</body>
+</html>
