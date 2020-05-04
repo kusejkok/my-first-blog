@@ -14,7 +14,7 @@
 </div>
 
 <body>
-  <p> Working through the book "Automate the boring stuff with Python" </p>
+  <p> Working through the book "Automate the boring stuff with Python" by Al Sweigart </p>
 
 <hr>
 
@@ -145,8 +145,84 @@ function show(id) {
 
 <hr>
 
+<h3> <a href="" onclick="javascript:show('divChapter7'); return false"> Chapter 7: Regular expressions </a> </h3>
+          <div style="display: none" id="divChapter7">
+  <ul>
+    <li> Create an object with: re.compile(), e.g., phoneNR = re.compile(r"""(\d\d\d-\d\d\d-\d\d\d\d)""") </li>
+    <li> Search pattern either with .search() or findall() </li>
+    <li> Groups within regular expressions are indicated with brackets () </li>
+    <li> re.comile(r"""((\d\d)-(\d\d\d))"""): 12-345. groups(1) is 12, groups(2) is 345. group(0) is 12-345</li>
+    <li> The pipe symbol | represents "or" </li>
+    <li> The expression (wo)?man searches for both, man and women </li>
+    <li> The regular expression algorithm is greedy, i.e., gives the longest possible. </li>
+    <li> ()* checks for 0 or more occurences, ()+ for 1 or more. </li>
+    <li> With {}, one can search for repetitions: {3,5} 3 to 5 repetitions. </li>
+    <li> Character classes: \d: digit, \D: all but digit; \s: space, .... </li>
+    <li> Use ^for beginning of string, $ for end of string </li>
+    <li> Use . for wild card, and .* for matching everything. </li>
+    <li> Use sub to substitute matches. </li>
+  </ul>
+</div>
 
-<h3> <a href="" onclick="javascript:show('divErrors'); return false"> Errors: </a> </h3>
+
+<hr>
+
+<h3> <a href="" onclick="javascript:show('divChapter8'); return false"> Chapter 8: Reading and writing files </a> </h3>
+          <div style="display: none" id="divChapter8">
+  <ul>
+    <li> The module os manages file paths. </li>
+    <li> With os.path.join("PythonLearning", "Chapter8", "newFile.py") you get the correct path, depending with system (OS, Linux, Windows) you are working on. </li>
+    <li> With os.getcwd() you get the path to the current working directory, os.chdir("newDir") changes the directory to "newDir". </li>
+    <li> With os.makedirs("newDir") one can make new directories. </li>
+    <li> With os.path.getsize("myPath") one can determine the size of a file or directory. </li>
+    <li> With open() and close() one can open and close a file, with read() and write() one can read and change the content of a file. </li>
+    <li> Files can be opened with read ("r"), write ("w") or append ("a") mode.
+    <li> The shelve module can be used to store variables in a file. </li>
+  </ul>
+</div>
+
+<hr>
+
+
+<h3> <a href="" onclick="javascript:show('divChapter9'); return false"> Chapter 9: Organizing files </a> </h3>
+          <div style="display: none" id="divChapter9">
+  <ul>
+    <li> The shutil module can be used to copy and move file from one folder to another. </li>
+    <li> The function move can also be used for renaming files. </li>
+    <li> shutil.copytree can be used for back-ups as it copies a folder and all its content. </li>
+    <li> Calling os.unlink and os.rmdir will permanently delete a file and folder, respectively. </li>
+    <li> Instead of using function that permanently delete files or folders, send2trash can be used for sending files or folders to trash. </li>
+    <li> With os.walk, one can walk along a whole directory, i.e., all folders, subfolders and files. </li>
+    <li> The module zipfile can be used for reading and writing zip files. </li>
+    <li> Zip files can be opened with zipfile.ZipFile("example.zip"). </li>
+    <li> The zipfile functions extractall(), getInfo(), namelist(), etc. can be applied for zip files </li>
+    <li> Note: write-mode ("w") will always delete all the content and write new things. </li>
+  </ul>
+</div>
+
+<hr>
+
+<h3> <a href="" onclick="javascript:show('divChapter10'); return false"> Chapter 10: Debugging </a> </h3>
+          <div style="display: none" id="divChapter10">
+  <ul>
+    <li> With try-except, one can avoid crashing the program, instead giving error messages. </li>
+    <li> With <em> raise Exception("Error message") </em> one can define own exception. </li>
+    <li> E.g. assert spam >=, "Spam is smaller than 10" gives the error message for spam < 10 </li>
+    <li> One can write the traceback (i.e., output and error messages) in a textfile using traceback.format_exc() </li>
+    <li> Assertions can be implemented as sanity checks, to catch bugs early. </li>
+    <li> Assertions have the form <em> assert condition, "assertion not true" </em> </li>
+    <li> An AssertionError appears with the specified message in case the assertion condition is wrong. </li>
+    <li> The logging module can be used to keep track of every step in a program </li>
+    <li> Using logging instead of print is preferable: logging can be disabled easily, print needs to be commented out manually. </li>
+    <li> The five levels of logging (debug, info, warning, error, critical) can be disabled hierarchically. </li>
+    <li> E.g. level = logging.DEBUG shows all logging statement, logging.ERROR shows only error and critical log messages </li>
+    <li> Using the debugger lets you step by step evaluate all variables in every line of code. </li>
+  </ul>
+</div>
+
+<hr>
+
+<h3> <a href="" onclick="javascript:show('divErrors'); return false"> Errors </a> </h3>
           <div style="display: none" id="divErrors">
 <ul>
   <li> ZeroDivisionError  </li>
@@ -156,6 +232,7 @@ function show(id) {
   <li> ValueError (e.g. using the method index calling an index that does not exist in a list) </li>
   <li> AttributeError (e.g. using the method append on a string, not list) </li>
   <li> KeyError (e.g. Asking for a key in a dictionary that is not defined) </li>
+  <li> AssertionError: the implemented assertion was wrong and the specified message is displayed (see Dubbuging) </li>
 </ul>
 </div>
 
@@ -168,6 +245,7 @@ function show(id) {
   <ul>
     <li> Importing modules: <em> sudo pip3 install ModuleName </em> </li>
     <li> Running on terminal: Either <em> python3 myProgram.py </em> or first line #! python3 in the script. </li>
+    <li> Organizing and playing around with folders and files: be careful about the .DBstore files </li>
   </ul>
 
 
